@@ -10,7 +10,7 @@
 [![Gittip][gittip-image]][gittip-url]
 
 Symlinking, but it checks whether the symlink already exists
-as well as fix various other annoyances.
+as well as fix various other annoyances such as `mkdirp`.
 
 ## API
 

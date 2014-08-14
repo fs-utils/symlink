@@ -12,7 +12,8 @@
   "repository": "fs-utils/symlink",
   "dependencies": {
     "mz": "1",
-    "bluebird": "2"
+    "bluebird": "2",
+    "mkdirp-then": "1"
   },
   "devDependencies": {
     "mkdirp": "0",

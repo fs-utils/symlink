@@ -3,6 +3,7 @@
 
 var fs = require('mz/fs')
 var path = require('path')
+var mkdirp = require('mkdirp-then')
 
 var win = process.platform === 'win32'
 
@@ -29,7 +30,9 @@ module.exports = function (from, to, type) {
     return true // create the link
   }).then(function (makeTheLink) {
     if (!makeTheLink) return
-    return fs.symlink(from, to, type)
+    return mkdirp(path.dirname(to)).then(function () {
+      return fs.symlink(from, to, type)
+    })
   })
 }
 
