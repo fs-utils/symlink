@@ -12,14 +12,14 @@
   "repository": "fs-utils/symlink",
   "dependencies": {
     "mz": "1",
-    "bluebird": "2",
+    "mkdirp": "0",
     "mkdirp-then": "1"
   },
   "devDependencies": {
-    "mkdirp": "0",
+    "bluebird": "2",
     "rimraf": "2",
     "istanbul": "0",
-    "mocha": "1"
+    "mocha": "2"
   },
   "scripts": {
     "test": "mocha --reporter spec",
