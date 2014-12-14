@@ -10,6 +10,7 @@ var win = process.platform === 'win32'
 module.exports = function (from, to, type) {
   var og = from = path.resolve(from)
   to = path.resolve(to)
+  /* istanbul ignore else */
   if (!win) {
     var target = from = path.relative(path.dirname(to), from)
     if (target.length >= from.length) target = from
@@ -23,17 +24,19 @@ module.exports = function (from, to, type) {
       if (resolved === og) return false // no need to create a symlink
       return fs.unlink(to).then(returnTrue, returnTrue)
     })
-  }, function (err) {
-    err = err.cause || err // fucking bluebird
-    // if the link doesn't exist, we make it
-    if (err.code !== 'ENOENT') throw err
-    return true // create the link
-  }).then(function (makeTheLink) {
+  }, buildIfMissing).then(function (makeTheLink) {
     if (!makeTheLink) return
     return mkdirp(path.dirname(to)).then(function () {
       return fs.symlink(from, to, type)
     })
   })
+}
+
+function buildIfMissing(err) {
+  /* istanbul ignore else */
+  if (err.code === 'ENOENT') return true
+  /* istanbul ignore next */
+  throw err
 }
 
 function returnTrue() {
