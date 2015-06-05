@@ -11,9 +11,9 @@
   "license": "MIT",
   "repository": "fs-utils/symlink",
   "dependencies": {
-    "mz": "1",
     "mkdirp": "0",
-    "mkdirp-then": "1"
+    "mkdirp-then": "1",
+    "mz": "^2.0.0"
   },
   "devDependencies": {
     "bluebird": "2",
