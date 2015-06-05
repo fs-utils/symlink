@@ -7,7 +7,6 @@
 [![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
 [![Downloads][downloads-image]][downloads-url]
-[![Gittip][gittip-image]][gittip-url]
 
 Symlinking, but it checks whether the symlink already exists
 as well as fix various other annoyances such as `mkdirp`.
@@ -36,5 +35,3 @@ link('package.json', 'alias.json', 'junction').then(function () {
 [license-url]: LICENSE.md
 [downloads-image]: http://img.shields.io/npm/dm/fs-symlink.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/fs-symlink
-[gittip-image]: https://img.shields.io/gittip/jonathanong.svg?style=flat-square
-[gittip-url]: https://www.gittip.com/jonathanong/
