@@ -12,7 +12,7 @@ module.exports = function (from, to, type) {
   to = path.resolve(to)
   /* istanbul ignore else */
   if (!win) {
-    var target = from = path.relative(path.dirname(to), from)
+    var target = from = path.normalize(path.relative(path.dirname(to), from))
     if (target.length >= from.length) target = from
   }
 
