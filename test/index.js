@@ -58,4 +58,13 @@ describe('fs-symlink', function () {
       assert.equal(__filename, resolved)
     })
   })
+
+  it('should symlink to itself from a child directory', function() {
+    var buildChildDir = path.join(build, 'build-child')
+    return link(build, buildChildDir).then(function () {
+      return fs.realpath(buildChildDir)
+    }).then(function (resolved) {
+      assert.equal(build, resolved)
+    })
+  })
 })
