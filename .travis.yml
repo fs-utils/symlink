@@ -1,11 +1,9 @@
 node_js:
-- "0.10"
-- "0.12"
-- "1"
-- "2"
-- "3"
-- "4"
-- "5"
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
 sudo: false
 language: node_js
 script: "npm run test-travis"
